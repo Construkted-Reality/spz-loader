@@ -34,9 +34,7 @@
   },
   "version": "0.3.1",
   "type": "module",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -46,6 +44,7 @@
     "require": "./dist/index.umd.cjs"
   },
   "scripts": {
+    "test": "node --test tests/*.test.mjs",
     "dev": "vite",
     "build": "tsc && vite build",
     "build:docker": "docker run --rm -v $(pwd)/lib/spz-wasm/:/src emscripten/emsdk:5.0.3 ./build.sh",

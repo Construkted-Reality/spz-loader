@@ -55,13 +55,13 @@ export const createGaussianCloudFromRaw = (
  * @param raw raw gaussian cloud
  */
 export const disposeRawGSCloud = (
-  wasmModule: MainModule,
+  _wasmModule: MainModule,
   raw: RawGaussianCloud,
 ): void => {
-  wasmModule._free(wasmModule.vf32_ptr(raw.positions));
-  wasmModule._free(wasmModule.vf32_ptr(raw.scales));
-  wasmModule._free(wasmModule.vf32_ptr(raw.rotations));
-  wasmModule._free(wasmModule.vf32_ptr(raw.alphas));
-  wasmModule._free(wasmModule.vf32_ptr(raw.colors));
-  wasmModule._free(wasmModule.vf32_ptr(raw.sh));
+  raw.positions.delete();
+  raw.scales.delete();
+  raw.rotations.delete();
+  raw.alphas.delete();
+  raw.colors.delete();
+  raw.sh.delete();
 };
