@@ -3,9 +3,10 @@ import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
-export default defineConfig(({}) => {
+export default defineConfig(() => {
   return {
     build: {
+      rollupOptions: { external: ["node:module"] },
       lib: {
         entry: "./lib/index.ts",
         name: "SpzWasmCore",
